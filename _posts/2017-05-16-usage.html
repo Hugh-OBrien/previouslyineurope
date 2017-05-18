@@ -1,75 +1,8 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
+---
+layout: map
+title:  "map-test"
+date:   2017-05-16 17:57:54 +0100
+categories: jekyll update
+spreadsheet: "https://docs.google.com/spreadsheets/d/1Ah2iOZOMZCB7r-65Owr9qTuQrhHH6vNlEt9Lw4FhFt0/pubhtml"
+---
 
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
-
-<!DOCTYPE html>
-<meta charset="utf-8">
-<html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-  </head>
-  <body>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://d3js.org/topojson.v1.min.js"></script>
-    <script src="scripts/datamaps.all.js"></script>
-    <div id="container" style="position: relative; height: 750px;"></div>
-    <script>
-    var map = new Datamap({
-        element: document.getElementById('container'),
-         geographyConfig: {
-            dataUrl: 'https://cdn.glitch.com/a19f093c-97e3-4a1a-bedf-cd50c857a9dc%2Feurope.json?1494952822824',
-            popupTemplate: function(geo, data) {
-                return ['<div class="hoverinfo"><strong>',
-                        '<h3>' + geo.properties.name + '</h3>',
-                        'Some data ',
-                        ': ' + data.numberOfThings,
-                        '</strong></div>'].join('');
-            }
-        },
-        scope: 'europe',
-        setProjection: function(element, options) {
-                var projection = d3.geo.albers()
-                    .center([10, 55.4])
-                    .rotate([0, 0])
-                    .parallels([50, 60])
-                    .scale(1000)
-                    .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-                var path =  d3.geo.path()
-                        .projection(projection);
-                return {path: path, projection: projection};
-            },
-        fills: {
-            good: 'green',
-            bad: 'red',
-            medium: 'blue',
-            UNKNOWN: 'rgb(0,0,0)',
-            defaultFill: 'grey'
-        }
-    });
-
-    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Ah2iOZOMZCB7r-65Owr9qTuQrhHH6vNlEt9Lw4FhFt0/pubhtml';
-
-    function init() {
-      Tabletop.init( { key: publicSpreadsheetUrl,
-                       callback: updateInfo,
-                       simpleSheet: true } )
-    }
-
-    function updateInfo(data, tabletop) {
-      console.log(data);
-      for(var i=0; i < data.length; i++){
-        var obj = {}
-        obj[data[i].country] = {fillKey: data[i].state, numberOfThings: data[i].data}
-        map.updateChoropleth(obj);
-      }
-    }
-    window.addEventListener('DOMContentLoaded', init)
-</script>
-  </body>
-</html>

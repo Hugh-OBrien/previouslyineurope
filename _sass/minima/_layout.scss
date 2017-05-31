@@ -107,20 +107,24 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
 .site-footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: $footer-height;
+  padding: 1rem;
   border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
   background-color: #131220;
   color: #828282;
 }
 
 .footer-heading {
   @include relative-font-size(1.125);
+  padding: 0px;
   margin-bottom: $spacing-unit / 2;
 }
 
@@ -179,13 +183,12 @@
   }
 }
 
-
-
 /**
  * Page content
  */
 .page-content {
   padding: $spacing-unit 0;
+  padding-bottom: $footer-height+60px;
 }
 
 .page-heading {

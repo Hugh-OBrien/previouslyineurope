@@ -20,11 +20,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "previouslyineurope.eu"
 twitter_username: previneurope
 
+paginate: 5
+
 # Build settings
 markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock

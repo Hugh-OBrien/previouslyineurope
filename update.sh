@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 # Management script to update the site
 #
@@ -7,23 +8,39 @@
 # "SIMPLECAST" : API key for Simplecast to poll episode info as JSON
 # "PIE_DIR"    : Directory where the updatable site lives
 # "pie"        : Simplecast id for the cast
+#
+# sh update.sh >> logs/update.log 2>> logs/update.log
 
+echo --------------------------------------------------------------
+date
 echo $PIE_DIR
+. ~/.keychain/`/bin/hostname`-sh
 cd $PIE_DIR
 
 git stash
-git checkout master
 echo $?
+
+eval $(ssh-agent)
+ssh-add $HOME/.ssh/gh_rsa
+
+git checkout master
+
 if [ $? = 0 ]
 then
-    git pull; git reset --hard origin/master
+    git pull
 
-    ## COUNT PAGES HERE
-
-    # Run update script
+    # Run update script, returns 0 if episodes added
     ruby episode_generate.rb
 
-    echo $?
+    # Do a push to the repo if we've added episodes
+    if [ $? = 0 ]
+    then
+        git add -A
+        git commit -am "adding episodes"
+        git push origin master
+    else
+        echo No episodes added
+    fi
 fi
 
 git stash pop

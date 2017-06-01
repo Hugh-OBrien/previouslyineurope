@@ -2,7 +2,6 @@
 # A script to autogenerate entries in the main feed from the Simplecast API
 #
 #
-#
 
 require 'net/http'
 require 'uri'
@@ -26,15 +25,20 @@ response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
 end
 
 counter = 0
+# fetch existing titles
+existing_episodes = Dir["./_posts/*"].map {|e| e.gsub(/.\/_posts\/\d{4}-\d{2}-\d{2}-/, '')
+                                            .gsub('.md', '')}
 
 JSON.parse(response.body).each do |episode|
+  next unless episode['published']
+  # check if it exists, we can't do the exact path matching,
+  # Simplecast was returning inconsistent dates
+  title = episode['title']
+  next if existing_episodes.include? title
+
   # generate file name
   date = Date.parse episode['published_at']
-  title = episode['title']
   file_name = "./_posts/#{date}-#{title}.md"
-
-  # check if it exists
-  next if File.file?(file_name)
 
   # write file from template
   File.binwrite(file_name, <<STRING)
@@ -46,10 +50,11 @@ title: #{title}
 
 #{episode['description']}
 STRING
+
   counter += 1
   puts "Added #{file_name}"
 end
 puts "#{counter} episodes added"
-return true if counter > 0
-return false
+exit(0) if counter > 0
+exit(100)
 

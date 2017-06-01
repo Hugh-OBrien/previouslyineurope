@@ -25,6 +25,8 @@ response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
   http.request(request)
 end
 
+counter = 0
+
 JSON.parse(response.body).each do |episode|
   # generate file name
   date = Date.parse episode['published_at']
@@ -44,4 +46,10 @@ title: #{title}
 
 #{episode['description']}
 STRING
+  counter += 1
+  puts "Added #{file_name}"
 end
+puts "#{counter} episodes added"
+return true if counter > 0
+return false
+

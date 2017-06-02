@@ -9,18 +9,17 @@
 # "PIE_DIR"    : Directory where the updatable site lives
 # "pie"        : Simplecast id for the cast
 #
+# Requires keychain to be setup with rsa keys to push to repo
+#
 # sh update.sh >> logs/update.log 2>> logs/update.log
 
 echo --------------------------------------------------------------
 date
-echo $PIE_DIR
 . ~/.keychain/`/bin/hostname`-sh
 cd $PIE_DIR
 
 git stash
-echo $?
 
-eval $(ssh-agent)
 ssh-add $HOME/.ssh/gh_rsa
 
 git checkout master

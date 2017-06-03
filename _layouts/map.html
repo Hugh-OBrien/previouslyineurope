@@ -14,10 +14,10 @@
 
     <main class="page-content" aria-label="Content">
 
-      <div id="container" style="position: relative; height: 750px;"></div>
+      <div id="map"></div>
       <script>
        var map = new Datamap({
-         element: document.getElementById('container'),
+         element: document.getElementById('map'),
          geographyConfig: {
            dataUrl: '/assets/topo/europe.json',
            popupTemplate: function(geo, data) {

@@ -268,3 +268,14 @@
 .simplecast-player {
   margin-bottom: 10px;
 }
+
+/**
+ * Map
+ */
+
+#map {
+  width: 100%;
+  overflow-x: scroll;
+  height: 750px;
+}
+

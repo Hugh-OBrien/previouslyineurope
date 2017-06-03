@@ -273,9 +273,18 @@
  * Map
  */
 
+#map-content {
+  background-color: $map-background;
+}
 #map {
   width: 100%;
-  overflow-x: scroll;
-  height: 750px;
-}
+  overflow: hidden;
+  overflow-x: auto;
+  height: 740px;
+  position: relative;
+  background-color: $map-background;
 
+  svg {
+    background-color: $map-background;
+  }
+}

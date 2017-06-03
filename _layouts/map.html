@@ -12,26 +12,30 @@
     <script src="/assets/js/datamaps.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
 
-    <main class="page-content" aria-label="Content">
-
+    <main class="page-content" id="map-content" aria-label="Content">
       <div id="map"></div>
       <script>
        var map = new Datamap({
          element: document.getElementById('map'),
          geographyConfig: {
            dataUrl: '/assets/topo/europe.json',
+           borderColor: '#2b2727',
+           backgroundColor: 'black',
            popupTemplate: function(geo, data) {
+             var mentions
+             if (data.mentions != -1) {
+               mentions = 'Mentions : ' + data.mentions
+             }
              return ['<div class="hoverinfo"><strong>',
                      '<h3>' + geo.properties.name + '</h3>',
-                     'Some data ',
-                     ': ' + data.numberOfThings,
+                     mentions,
                      '</strong></div>'].join('');
            }
          },
          scope: 'europe',
          setProjection: function(element, options) {
            var projection = d3.geo.albers()
-                              .center([10, 55.4])
+                              .center([20, 52])
                               .rotate([0, 0])
                               .parallels([50, 60])
                               .scale(1000)
@@ -55,22 +59,55 @@
          Tabletop.init( { key: publicSpreadsheetUrl,
                           callback: updateInfo,
                           simpleSheet: true } )
+         mapState = 'mentions'
        }
 
-       function updateInfo(data, tabletop) {
-         console.log(data);
+       function updateInfo(data) {
+         window.data = data
+         var onlyValues = data.map(function(obj){ return obj.mentions; });
+         var minValue = Math.min.apply(null, onlyValues),
+             maxValue = Math.max.apply(null, onlyValues);
+
+         var paletteScale = d3.scale.linear()
+                              .domain([minValue,maxValue])
+                              .range(["#EFEFFF","#02386F"]);
+
          for(var i=0; i < data.length; i++){
            var obj = {}
-           obj[data[i].country] = {fillKey: data[i].state, numberOfThings: data[i].data}
+           obj[data[i].country] = {mentions: data[i].mentions, fillColor: paletteScale(data[i].mentions)}
            map.updateChoropleth(obj);
          }
        }
+
+       function updateInfoNone(data) {
+         window.data = data
+
+         for(var i=0; i < data.length; i++){
+           var obj = {}
+           obj[data[i].country] = {mentions: -1, fillColor: 'grey'}
+           map.updateChoropleth(obj);
+         }
+       }
+
+
+       function switchData() {
+         if (mapState === 'mentions') {
+           updateInfoNone(window.data)
+           mapState = 'political'
+         } else {
+           updateInfo(window.data)
+           mapState = 'mentions'
+         }
+       }
+
        window.addEventListener('DOMContentLoaded', init)
       </script>
+
+      <button onclick="switchData()" type="button" id="switch-data">CHANGE</button>
     </main>
 
     {% include footer.html %}
-
   </body>
 
 </html>
+

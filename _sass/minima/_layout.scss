@@ -288,3 +288,19 @@
     background-color: $map-background;
   }
 }
+#under-map {
+  display: inline-block;
+  width: 100%;
+
+  #legend-wrapper {
+    padding-left: 10px;
+    display: inline-block;
+    width: 50%;
+    float: right;
+  }
+  #description {
+    padding-left: 10px;
+    display: inline-block;
+    width: 40%;
+  }
+}

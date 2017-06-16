@@ -14,9 +14,8 @@
 # sh update.sh >> logs/update.log 2>> logs/update.log
 
 echo --------------------------------------------------------------
-echo $SSH_AGENT_PID
-
 date
+keychain
 . ~/.keychain/`/bin/hostname`-sh
 cd $PIE_DIR
 

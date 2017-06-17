@@ -297,6 +297,9 @@
     display: inline-block;
     width: 50%;
     float: right;
+    #legend {
+      width: 100%;
+    }
   }
   #description {
     padding-left: 10px;

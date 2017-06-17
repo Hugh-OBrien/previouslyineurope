@@ -10,6 +10,7 @@
     <script src="/assets/js/d3.v3.min.js"></script>
     <script src="/assets/js/topojson.v1.min.js"></script>
     <script src="/assets/js/datamaps.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.13.0/d3-legend.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
 
     <main class="page-content" id="map-content" aria-label="Content">
@@ -35,8 +36,7 @@
           </button>
         </div>
         <div id="legend-wrapper">
-          <svg>
-            <g id="legend" transform="translate(360,250)"></g>
+          <svg id="legend">
           </svg>
         </div>
       </div>
@@ -44,6 +44,5 @@
 
     {% include footer.html %}
   </body>
-
 </html>
 

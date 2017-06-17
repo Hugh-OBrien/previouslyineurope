@@ -55,7 +55,7 @@ function updateInfo(data) {
     colors.push(color)
   }
   map.updateChoropleth(obj);
-  generateLegend(onlyValues, colors);
+  generateScaleLegend(paletteScale, "Podcast Mentions");
 }
 
 function updateInfoNone(data) {
@@ -65,6 +65,7 @@ function updateInfoNone(data) {
     var obj = {}
     obj[data[i].country] = {mentions: -1, fillColor: 'grey'}
     map.updateChoropleth(obj);
+    removeLegend();
   }
 }
 
@@ -78,47 +79,29 @@ function switchData() {
   }
 }
 
-function generateLegend(data, colors) {
-  var formatPercent = d3.format(".0%"),
-      formatNumber = d3.format(".0f");
+function removeLegend() {
+  var svg = d3.select("#legend");
+  svg.selectAll("*").remove();
+}
 
-  var threshold = d3.scale.linear()
-                    .domain(data)
-                    .range(colors);
+function generateScaleLegend(scale, title, blurb) {
 
-  var x = d3.scale.linear()
-            .domain([0, 1])
-            .range([0, 240]);
+  var svg = d3.select("#legend");
 
-  var xAxis = d3.svg.axis(x)
-                .tickSize(13)
-                .tickValues(threshold.domain())
-                .tickFormat(function(d) { return d === 0.5 ? formatPercent(d) : formatNumber(100 * d); });
+  svg.append("g")
+     .attr("class", "legendLinear")
+     .attr("transform", "translate(20,20)");
 
-  var g = d3.select("#legend").call(xAxis);
+  var legendLinear = d3.legend.color()
+                       .shapeWidth(30)
+                       .cells(10)
+                       .orient('horizontal')
+                       .labelFormat(d3.format(".0f"))
+                       .scale(scale)
+                       .title(title);
 
-  g.select(".domain")
-   .remove();
-
-  g.selectAll("rect")
-   .data(threshold.range().map(function(color) {
-     var d = threshold
-     if (d[0] == null) d[0] = x.domain()[0];
-     if (d[1] == null) d[1] = x.domain()[1];
-     return d;
-   }))
-   .enter().insert("rect", ".tick")
-   .attr("height", 8)
-   .attr("x", function(d) { return x(d[0]); })
-   .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-   .attr("fill", function(d) { return threshold(d[0]); });
-
-  g.append("text")
-   .attr("fill", "#000")
-   .attr("font-weight", "bold")
-   .attr("text-anchor", "start")
-   .attr("y", -6)
-   .text("Mentions on the podcast by country");
+  svg.select(".legendLinear")
+     .call(legendLinear);
 }
 
 window.addEventListener('DOMContentLoaded', init)

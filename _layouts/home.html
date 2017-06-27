@@ -17,13 +17,12 @@ layout: default
       </h2>
       {% if post.layout == 'episode' %}
       <div class="simplecast-player">
+        {{ post.content }}
         <iframe frameborder='0' height='36px' scrolling='no' seamless src='https://simplecast.com/e/{{ post.simplecastId }}?style=dark' width='100%'></iframe>
       {% endif %}
     </li>
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
   <div class="pagination">
     {% if paginator.previous_page %}
@@ -34,4 +33,6 @@ layout: default
     <a href="{{ paginator.next_page_path }}" class="next">Older</a>
     {% endif %}
   </div>
+  <br/>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 </div>

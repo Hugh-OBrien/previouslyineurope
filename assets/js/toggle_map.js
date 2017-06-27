@@ -55,7 +55,7 @@ function updateInfo(data) {
     colors.push(color)
   }
   map.updateChoropleth(obj);
-  generateScaleLegend(paletteScale, "Podcast Mentions");
+  generateScaleLegend(paletteScale, "Podcast Mentions", "Counts for mentions on the podcast by country. Mentions of the EU in general don't count towards anyone");
 }
 
 function updateInfoNone(data) {
@@ -69,24 +69,24 @@ function updateInfoNone(data) {
   }
 }
 
-function switchData() {
-  if (mapState === 'mentions') {
-    updateInfoNone(window.data)
-    mapState = 'political'
-  } else {
+function switchData(state) {
+  if (state === 'mentions') {
     updateInfo(window.data)
-    mapState = 'mentions'
+  } else {
+    updateInfoNone(window.data)
   }
 }
 
 function removeLegend() {
   var svg = d3.select("#legend");
+  var blurbSpace = document.getElementById('legend-text')
+  blurbSpace.innerHTML = ''
   svg.selectAll("*").remove();
 }
 
-function generateScaleLegend(scale, title, blurb) {
-
+function generateScaleLegend(scale, title, blurb = '') {
   var svg = d3.select("#legend");
+  var blurbSpace = document.getElementById('legend-text')
 
   svg.append("g")
      .attr("class", "legendLinear")
@@ -102,6 +102,7 @@ function generateScaleLegend(scale, title, blurb) {
 
   svg.select(".legendLinear")
      .call(legendLinear);
+  blurbSpace.innerHTML = blurb
 }
 
 window.addEventListener('DOMContentLoaded', init)

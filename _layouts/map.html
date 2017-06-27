@@ -4,7 +4,6 @@
   {% include head.html %}
 
   <body>
-
     {% include header.html %}
 
     <script src="/assets/js/d3.v3.min.js"></script>
@@ -31,13 +30,23 @@
       <hr>
       <div id="under-map">
         <div id="description">
-          <button onclick="switchData()" type="button" id="switch-data">
-            CHANGE
-          </button>
+          <input type="radio" onclick="switchData('mentions')" name="radio"
+                 class="map-switch-input" id="mentions" active="true" checked value="1"/>
+          <label class="map-switch" for="mentions"> Podcast Mentions </label>
+
+          <input type="radio" onclick="switchData('affiliations')" name="radio"
+                 class="map-switch-input" id="affiliations" active="true" value="1"/>
+          <label class="map-switch" for="affiliations"> EU Party Affiliations </label>
+
+          <input type="radio" onclick="switchData('nothing')" name="radio"
+                 class="map-switch-input" id="clear" active="true" value="1"/>
+          <label class="map-switch" for="clear"> Clear Map </label>
         </div>
         <div id="legend-wrapper">
           <svg id="legend">
           </svg>
+          <div id="legend-text">
+          </div>
         </div>
       </div>
     </main>

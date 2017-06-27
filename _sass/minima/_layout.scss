@@ -291,6 +291,7 @@
 #under-map {
   display: inline-block;
   width: 100%;
+  padding-top: 5px;
 
   #legend-wrapper {
     padding-left: 10px;
@@ -304,6 +305,22 @@
   #description {
     padding-left: 10px;
     display: inline-block;
-    width: 40%;
+    width: 45%;
   }
+  .map-switch-input {
+    display: none;
+  }
+  .map-switch {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    background:#fff;
+    cursor:pointer;
+    font-size:larger;
+    transition: all .5s ease-in-out;
+    &:hover, &:focus, &:active {
+      border: 1px solid #828282;
+    }
+  }
+  .map-switch-input:checked + .map-switch{background:#828282;}
 }

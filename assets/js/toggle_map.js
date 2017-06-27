@@ -6,12 +6,12 @@ var map = new Datamap({
     backgroundColor: 'black',
     popupTemplate: function(geo, data) {
       var mentions
-      if (data.mentions != -1) {
-        mentions = 'Mentions : ' + data.mentions
+      if (data.text != -1) {
+        text = data.text
       }
       return ['<div class="hoverinfo"><strong>',
               '<h3>' + geo.properties.name + '</h3>',
-              mentions,
+              text,
               '</strong></div>'].join('');
     }
   },
@@ -38,7 +38,7 @@ var map = new Datamap({
   }
 });
 
-function updateInfo(data) {
+function updateInfoMentions(data) {
   window.data = data
   var onlyValues = data.map(function(obj) { return obj.mentions; });
   var minValue = Math.min.apply(null, onlyValues),
@@ -51,7 +51,8 @@ function updateInfo(data) {
   var colors = []
   for(var i=0; i < data.length; i++){
     var color = paletteScale(data[i].mentions)
-    obj[data[i].country] = {mentions: data[i].mentions, fillColor: color}
+    var mentions = 'mentions: ' + data[i].mentions
+    obj[data[i].country] = {text: mentions, fillColor: color}
     colors.push(color)
   }
   map.updateChoropleth(obj);
@@ -59,38 +60,89 @@ function updateInfo(data) {
 }
 
 function updateInfoNone(data) {
-  window.data = data
+  window.data = data;
 
   for(var i=0; i < data.length; i++){
-    var obj = {}
-    obj[data[i].country] = {mentions: -1, fillColor: 'grey'}
+    var obj = {};
+    obj[data[i].country] = {text: -1, fillColor: 'grey'};
     map.updateChoropleth(obj);
     removeLegend();
   }
 }
 
+function updateInfoPolitical(data) {
+  window.data = data;
+  var obj = {};
+
+  var colors = {
+    'S&D': '#ff0000',
+    'EPP': '#4089c3',
+    'ECR': '#0054a6',
+    'ALDE': '#e6007e',
+  }
+
+  for(var i=0; i < data.length; i++){
+    var mainParty = data[i].party.split(',')[0]
+    color = colors[mainParty] || 'grey'
+    obj[data[i].country] = {text: data[i].party, fillColor: color}
+  }
+  map.updateChoropleth(obj);
+  removeLegend()
+}
+
+function updateInfoMembership(data) {
+  window.data = data;
+  var obj = {};
+
+  var colors = {
+    'TRUE': '#009',
+    'FALSE': 'grey'
+  }
+
+  for(var i=0; i < data.length; i++){
+    var color = colors[data[i].EU] || 'grey'
+    let text
+    if (data[i].EU === 'TRUE'){
+      text = 'EU Member'
+    } else {
+      text = ''
+    }
+    obj[data[i].country] = {text: text, fillColor: color}
+  }
+  map.updateChoropleth(obj);
+  removeLegend()
+}
+
 function switchData(state) {
   if (state === 'mentions') {
-    updateInfo(window.data)
+    updateInfoMentions(window.data)
+  } else if (state === 'affiliations') {
+    updateInfoPolitical(window.data)
+  } else if (state === 'membership') {
+    updateInfoMembership(window.data)
   } else {
     updateInfoNone(window.data)
   }
 }
 
-function removeLegend() {
-  var svg = d3.select("#legend");
+
+function textLegend(blurb) {
   var blurbSpace = document.getElementById('legend-text')
-  blurbSpace.innerHTML = ''
-  svg.selectAll("*").remove();
+  blurbSpace.innerHTML = blurb
+}
+
+function removeLegend() {
+  var svg = d3.select("#legend")
+  textLegend('')
+  svg.selectAll("*").remove()
 }
 
 function generateScaleLegend(scale, title, blurb = '') {
-  var svg = d3.select("#legend");
-  var blurbSpace = document.getElementById('legend-text')
+  var svg = d3.select("#legend")
 
   svg.append("g")
-     .attr("class", "legendLinear")
-     .attr("transform", "translate(20,20)");
+              .attr("class", "legendLinear")
+              .attr("transform", "translate(20,20)")
 
   var legendLinear = d3.legend.color()
                        .shapeWidth(30)
@@ -98,11 +150,11 @@ function generateScaleLegend(scale, title, blurb = '') {
                        .orient('horizontal')
                        .labelFormat(d3.format(".0f"))
                        .scale(scale)
-                       .title(title);
+                       .title(title)
 
   svg.select(".legendLinear")
-     .call(legendLinear);
-  blurbSpace.innerHTML = blurb
+                       .call(legendLinear)
+  textLegend(blurb)
 }
 
 window.addEventListener('DOMContentLoaded', init)

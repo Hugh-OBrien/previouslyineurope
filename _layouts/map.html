@@ -20,7 +20,7 @@
 
        function init() {
          Tabletop.init( { key: publicSpreadsheetUrl,
-                          callback: updateInfo,
+                          callback: updateInfoMentions,
                           simpleSheet: true } )
          mapState = 'mentions'
        }
@@ -37,6 +37,10 @@
           <input type="radio" onclick="switchData('affiliations')" name="radio"
                  class="map-switch-input" id="affiliations" active="true" value="1"/>
           <label class="map-switch" for="affiliations"> EU Party Affiliations </label>
+
+          <input type="radio" onclick="switchData('membership')" name="radio"
+                 class="map-switch-input" id="membership" active="true" value="1"/>
+          <label class="map-switch" for="membership"> EU Membership </label>
 
           <input type="radio" onclick="switchData('nothing')" name="radio"
                  class="map-switch-input" id="clear" active="true" value="1"/>

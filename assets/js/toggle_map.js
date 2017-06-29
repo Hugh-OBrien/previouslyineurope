@@ -18,7 +18,7 @@ var map = new Datamap({
   scope: 'europe',
   setProjection: function(element, options) {
     var projection = d3.geo.albers()
-                       .center([20, 52])
+                       .center([10, 52])
                        .rotate([0, 0])
                        .parallels([50, 60])
                        .scale(1000)
@@ -135,9 +135,11 @@ function removeLegend() {
   var svg = d3.select("#legend")
   textLegend('')
   svg.selectAll("*").remove()
+  document.getElementById('legend').style.height = '0px';
 }
 
 function generateScaleLegend(scale, title, blurb = '') {
+  document.getElementById('legend').style.height = 'auto';
   var svg = d3.select("#legend")
 
   svg.append("g")

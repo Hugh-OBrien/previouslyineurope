@@ -29,6 +29,13 @@
       <script src="/assets/js/toggle_map.js"></script>
       <hr>
       <div id="under-map">
+        <div id="legend-wrapper">
+          <svg id="legend">
+          </svg>
+          <div id="legend-text">
+          </div>
+        </div>
+        <br/>
         <div id="description">
           <input type="radio" onclick="switchData('mentions')" name="radio"
                  class="map-switch-input" id="mentions" active="true" checked value="1"/>
@@ -45,12 +52,6 @@
           <input type="radio" onclick="switchData('nothing')" name="radio"
                  class="map-switch-input" id="clear" active="true" value="1"/>
           <label class="map-switch" for="clear"> Clear Map </label>
-        </div>
-        <div id="legend-wrapper">
-          <svg id="legend">
-          </svg>
-          <div id="legend-text">
-          </div>
         </div>
       </div>
     </main>

@@ -8,7 +8,7 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
-  background-color: #131220;
+  background-color: $site-header-color;
 }
 
 .site-title {
@@ -57,8 +57,8 @@
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    background-color: $site-header-color;
+    z-index: 1;
     border-radius: 5px;
     text-align: right;
 
@@ -81,7 +81,7 @@
       text-align: center;
 
       > svg path {
-        fill: $grey-color-dark;
+        fill: white;
       }
     }
 
@@ -118,8 +118,12 @@
   height: $footer-height;
   padding: 1rem;
   border-top: 1px solid $grey-color-light;
-  background-color: #131220;
+  background-color: $site-header-color;
   color: #828282;
+
+  @include media-query($on-laptop) {
+   height: auto;
+  }
 }
 
 .footer-heading {
@@ -189,6 +193,10 @@
 .page-content {
   padding: $spacing-unit 0;
   padding-bottom: $footer-height+60px;
+
+  @include media-query($on-laptop) {
+    padding-bottom: $footer-height+160px;
+  }
 }
 
 .page-heading {
@@ -301,11 +309,21 @@
     #legend {
       width: 100%;
     }
+    @include media-query($on-laptop) {
+      width: 100%;
+      float: none;
+      display: block;
+    }
   }
   #description {
     padding-left: 10px;
     display: inline-block;
     width: 45%;
+    @include media-query($on-laptop) {
+      width: 100%;
+      float: none;
+      display: block;
+    }
   }
   .map-switch-input {
     display: none;

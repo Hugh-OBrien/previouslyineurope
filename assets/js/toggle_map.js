@@ -17,8 +17,13 @@ var map = new Datamap({
   },
   scope: 'europe',
   setProjection: function(element, options) {
+    var centerX = 12
+    if (window.matchMedia("(max-width: 800px)").matches) {
+      centerX = 0
+    }
+
     var projection = d3.geo.albers()
-                       .center([10, 52])
+                       .center([centerX, 52])
                        .rotate([0, 0])
                        .parallels([50, 60])
                        .scale(1000)

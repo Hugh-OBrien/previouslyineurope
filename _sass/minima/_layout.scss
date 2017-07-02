@@ -122,7 +122,7 @@
   color: #828282;
 
   @include media-query($on-laptop) {
-   height: auto;
+    height: auto;
   }
 }
 
@@ -294,6 +294,9 @@
 
   svg {
     background-color: $map-background;
+    @include media-query($on-laptop) {
+      width: 800px;
+    }
   }
 }
 #under-map {
@@ -310,17 +313,18 @@
       width: 100%;
     }
     @include media-query($on-laptop) {
-      width: 100%;
+      width: 85%;
       float: none;
       display: block;
     }
   }
+
   #description {
     padding-left: 10px;
     display: inline-block;
     width: 45%;
     @include media-query($on-laptop) {
-      width: 100%;
+      width: 85%;
       float: none;
       display: block;
     }

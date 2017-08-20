@@ -11,9 +11,9 @@ We also try to cover stories which have had less coverage in the English languag
 
 ### **Subscribe to the podcast**
 
-[RSS]()
+[<img src="/assets/images/apple.svg" alt="Apple podcasts" style="width: 100px;"/>](https://itunes.apple.com/ie/podcast/previously-in-europe/id1135603045?mt=2)
+[<img src="/assets/images/rss.svg" alt="RSS feed" style="width: 100px;"/>](https://rss.simplecast.com/podcasts/2120/rss)
 
-[Apple Podcasts](https://itunes.apple.com/ie/podcast/previously-in-europe/id1135603045?mt=2)
 
 ### **Contact**
 
@@ -34,6 +34,7 @@ Software developer with a psychology degree by day, podcaster with a psychology 
 
 Other things I work on live at [hugh-obrien.com](http://hugh-obrien.com)
 
+<br/>
 ## **This Site**
 The idea of this site is to supplement the podcast. We were generating a lot of content and having discussions which didn't make the podcast. We also often had ideas for interesting pieces of data to visualise. This serves as a place which brings together all the {{site.title}} content into one place.
 

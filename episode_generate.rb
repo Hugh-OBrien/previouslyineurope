@@ -45,7 +45,7 @@ JSON.parse(response.body).each do |episode|
 ---
 layout: episode
 simplecastId: #{episode['id']}
-title: #{title}
+title: "#{title}"
 ---
 
 #{episode['description']}

@@ -2,7 +2,7 @@
 
 // Define defaults for each variable.
 
-$base-font-family: 'Montserrat', sans-serif;
+$base-font-family: 'Avenir', 'Montserrat', sans-serif;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -11,6 +11,7 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
+$site-header-color:#131220 !default;
 $nav-link-color:   #f6f6ee !default;
 $title-color:      #eee93b !default;
 $background-color: #fdfdfd !default;
@@ -27,6 +28,8 @@ $content-width:    800px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
+
+$map-background:   white;
 
 // Use media queries like this:
 // @include media-query($on-palm) {

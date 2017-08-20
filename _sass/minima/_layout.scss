@@ -29,6 +29,17 @@
   }
 }
 
+.header-icon {
+  width: 30px;
+  margin-right: 5px;
+  padding-bottom: 5px;
+}
+
+.footer-icon {
+  width: 16px;
+  padding-right: 9px;
+}
+
 .site-nav {
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
@@ -96,6 +107,7 @@
     }
 
     .page-link {
+      color: black;
       display: block;
       padding: 5px 10px;
 
@@ -121,8 +133,8 @@
   background-color: $site-header-color;
   color: #828282;
 
-  @include media-query($on-laptop) {
-    height: auto;
+  @include media-query($on-palm) {
+    height: $footer-height * 1.7;
   }
 }
 
@@ -157,13 +169,13 @@
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(25% - (#{$spacing-unit} / 2));
+  width:         calc(25% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(40% - (#{$spacing-unit} / 2));
+  width:         calc(40% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
@@ -176,6 +188,7 @@
   .footer-col-3 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
+    display: none;
   }
 }
 
@@ -194,8 +207,8 @@
   padding: $spacing-unit 0;
   padding-bottom: $footer-height+60px;
 
-  @include media-query($on-laptop) {
-    padding-bottom: $footer-height+160px;
+  @include media-query($on-palm) {
+    padding-bottom: ($footer-height*1.7)+60px;
   }
 }
 

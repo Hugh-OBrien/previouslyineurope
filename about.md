@@ -5,14 +5,15 @@ permalink: /about/
 ---
 ## **{{ site.title }} is a weekly podcast following news and politics across Europe.**
 
-The show follows a relatively loose format discussing the weeks big events across Europe.
+Hugh and Kieran casually discuss the big events of Europe from Athens to Oslo, Paris to Zagreb
 
 We also try to cover stories which have had less coverage in the English language press. A big motivation for starting the podcast was our annoyance at the skewed nature of mainstream press coverage of European events, including internal EU happenings. The 'but how does this relate to your country' nature of a lot of coverage makes sense; however we like to try see things from the perspective of the local population and Europe as a whole.
 
 ### **Subscribe to the podcast**
 
 [RSS]()
-[Apple Podcasts]()
+
+[Apple Podcasts](https://itunes.apple.com/ie/podcast/previously-in-europe/id1135603045?mt=2)
 
 ### **Contact**
 
@@ -24,12 +25,12 @@ We always appreciate feedback on the show and this site.
 
 ## **Hosts**
 
-### **Kieran Dold**
+### [**Kieran Dold**](https://twitter.com/CiaranDold)
 
-Kieran's blurb lives here...
+A designer/comedian with a weird obsession with EU politics, political opinions range from centre-left social democracy to full anarcho-communism who wishes to destroy the state and capitalism (depending on blood sugar levels). I enforce the "No Election Left Behind" rule (you're welcome Liechtenstein) and the Eurovision definition of Europe (Armenia, Georgia, Azerbaijan! Israel and Australia is pushing it though). Generally believes in further EU integration that directly benefit individuals and while I'm not a massive Eurovision fan, I'm certainly an obnoxious Eurovision fan.
 
 ### [**Hugh O'Brien**](twitter.com/fuzzymooples)
-A software developer with a psychology degree during the day. The podcast serves as an outlet for my political and polls junkie tendencies. Political views tend to skew left on most issues but party affiliation is non-existant. Electoral reform is necessary in most countries in Europe and rarely gets the attention it deserves...
+Software developer with a psychology degree by day, podcaster with a psychology degree by night. The podcast serves as an outlet for my political and polls junkie tendencies. Political views tend to skew left on most issues but party affiliation is non-existant. Electoral reform is necessary in most countries in Europe and rarely gets the attention it deserves...
 
 Other things I work on live at [hugh-obrien.com](http://hugh-obrien.com)
 

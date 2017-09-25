@@ -7,12 +7,15 @@
 <!-- load D3plus after D3js -->
 <script src="//d3plus.org/js/d3plus.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+
 <!-- create container element for visualization -->
 <div id="plus_map"></div>
 
 <script>
+ /*  var publicSpreadsheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTv1URp-GZudXPtYAKUXui73sMUGD2MA1NAXkJAseS2dWgSpu1EGSYj3QbfGAP5hsY3VN3K0I_UGoB_/pubhtml"*/
+ var publicSpreadsheetUrl ="https://docs.google.com/spreadsheets/d/1X3YSVhjcU377eobZLcGbFKnrb8WqYlfA8xaF8QVitcM/pubhtml"
  // sample data array
- var sample_data = []
  /* var sample_data = [
   *   {"value": 2315987123, "country": "nausa", "name": "United States"},
   *   {"value": 38157121349, "country": "aschn", "name": "China"},
@@ -20,15 +23,35 @@
   *   {"value": 9807134982, "country": "sabra", "name": "Brazil"}
   * ]*/
  // instantiate d3plus
- var visualization =
-   d3plus.viz()
-         .container("#plus_map")
-         .data(sample_data)
-         .coords("/assets/topo/westminister.json")
-         .type("geo_map")          // visualization type
-         .id("country")            // key for which our data is unique on
-         .text("name")             // key to use for display text
-         .color("value")           // key for coloring countries
-         .tooltip("value")         // keys to place in tooltip
-         .draw()                   // finally, draw the visualization!
+
+ Tabletop.init( { key: publicSpreadsheetUrl,
+                  callback: setupMap,
+                  simpleSheet: true } )
+
+ function setupMap(data) {
+   var sample_data = [{"id": "E14000803", "value": "1", name: "Maidenhead"}]
+
+   var visualization =
+     d3plus.viz()
+           .container("#plus_map")
+           .data(data)
+           .coords("/assets/topo/westminister.json")
+           .type("geo_map")          // visualization type
+           .id("id")            // key for which our data is unique on
+           .text("Minister")   // key to use for display text
+           .color("value")           // key for coloring countries
+           .tooltip(["constitutiency", "portfolio"]) // keys to place in tooltip
+           .mouse({"click": function(d, vis) {
+             if (d.d3plus.data.geo_map_id_0_all_id.value != undefined){
+               return true
+             } else {
+               return false
+             }
+           }})
+           .font({"family": "Arial"})
+           .legend({labels: false})
+           .labels(false)
+           .draw()                   // finally, draw the visualization!
+
+ }
 </script>

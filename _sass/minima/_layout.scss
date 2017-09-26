@@ -122,7 +122,6 @@
  * Site footer
  */
 .site-footer {
-  position: absolute;
   right: 0;
   left: 0;
   bottom: 0;
@@ -357,4 +356,24 @@
     }
   }
   .map-switch-input:checked + .map-switch{background:#828282;}
+}
+#plus_map{
+  margin: 8px;
+
+  >div{
+    width: 100% !important;
+  }
+
+  #d3plus{
+    width: 100%;
+  }
+}
+
+.post-title{
+  padding-top: 10px;
+  font-size: 50px;
+}
+.post-subtitle{
+  font-size: 30px;
+  font-style: italic;
 }

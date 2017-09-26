@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+  <meta charset="utf-8">
+
+  <body>
+    {% include header.html %}
+    <div class="wrapper">
+      <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <div class="post-content" itemprop="articleBody">
+          <p style="padding-top: 20px;">
+            <span class="post-title"> {{ page.title }} </span>
+          </p>
+          {% if page.subtitle %}
+          <p>
+            <span class="post-subtitle"> {{ page.subtitle}}</span>
+          </p>
+          {% endif %}
+
+          By <a href="/about"> {{ page.author }} </a> |
+              {{ page.date | date_to_string }}
+          <p>
+            {{page.content}}
+          </p>
+        </div>
+      </article>
+    </div>
+    {% include d3_plus_map.html %}
+    {% include footer.html %}
+  </body>
+</html>

@@ -3,6 +3,7 @@ layout: plus_map
 title: UK Cabinet Distribution
 subtitle: Does this look representative?
 author: Hugh
+home_text: A non-podcast episode post! A look at the distribution of those attending UK cabinet meetings according to what constituency they represent. The urban/rural divide is very apparent...
 ---
 
 A reasonably common theme in UK politics of late is the dominance of parties other than the Conservatives in cities, and the blue belt dominating the rural areas (in England at least). This rural/urban divide isn't unique to the UK by any means. The US has a similar right means rural and left means urban issue. Romania is another good example as we saw large scale protests in cities against attempted reforms by the current government... also just look at the [geographical divide in their presidential election](https://en.wikipedia.org/wiki/Romanian_presidential_election,_2014).

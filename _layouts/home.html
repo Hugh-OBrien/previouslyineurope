@@ -19,6 +19,9 @@ layout: default
       <div class="simplecast-player">
         {{ post.content }}
         <iframe frameborder='0' height='36px' scrolling='no' seamless src='https://simplecast.com/e/{{ post.simplecastId }}?style=dark' width='100%'></iframe>
+      </div>
+      {% else %}
+        {{ post.home_text }}
       {% endif %}
     </li>
     {% endfor %}

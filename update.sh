@@ -38,10 +38,10 @@ then
     then
         git add -A
         git commit -am "adding episodes"
-        git push origin master
     else
         echo No episodes added
     fi
+    git push origin master	    
 fi
 
 git stash pop

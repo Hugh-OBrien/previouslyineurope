@@ -12,6 +12,7 @@
 # Requires keychain to be setup with rsa keys to push to repo
 #
 # sh update.sh >> logs/update.log 2>> logs/update.log
+#
 
 echo --------------------------------------------------------------
 date

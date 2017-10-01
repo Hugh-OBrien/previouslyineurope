@@ -358,7 +358,9 @@
   .map-switch-input:checked + .map-switch{background:#828282;}
 }
 #plus_map{
-  margin: 8px;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
 
   >div{
     width: 100% !important;

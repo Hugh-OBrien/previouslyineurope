@@ -15,7 +15,7 @@ layout: default
       <h2>
         <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </h2>
-      {% if post.layout == 'episode' %}
+      {% if post.layout == 'episode' or post.layout == 'episode_v2' %}
       <div class="simplecast-player">
         {{ post.content }}
         <iframe frameborder='0' height='36px' scrolling='no' seamless src='https://simplecast.com/e/{{ post.simplecastId }}?style=dark' width='100%'></iframe>

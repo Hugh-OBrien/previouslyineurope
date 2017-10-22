@@ -20,7 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "previouslyineurope.eu"
 twitter_username: previneurope
 
-paginate: 5
+paginate: 4
 
 # Build settings
 markdown: kramdown

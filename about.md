@@ -30,7 +30,7 @@ We always appreciate feedback on the show and this site.
 A designer/comedian with a weird obsession with EU politics, political opinions range from centre-left social democracy to full anarcho-communism who wishes to destroy the state and capitalism (depending on blood sugar levels). I enforce the "No Election Left Behind" rule (you're welcome Liechtenstein) and the Eurovision definition of Europe (Armenia, Georgia, Azerbaijan! Israel and Australia is pushing it though). Generally believes in further EU integration that directly benefit individuals and while I'm not a massive Eurovision fan, I'm certainly an obnoxious Eurovision fan.
 
 ### [**Hugh O'Brien**](https://twitter.com/fuzzymooples)
-Software developer with a psychology degree by day, podcaster with a psychology degree by night. The podcast serves as an outlet for my political and polls junkie tendencies. Political views tend to skew left on most issues but party affiliation is non-existant. Electoral reform is necessary in most countries in Europe and rarely gets the attention it deserves...
+Software developer and PhD student in medical imaging. A psychology degree lives in my back pocket. Interests include misunderstandings of basic statistics in the media and complaining about what is and isn't valid news.
 
 Other things I work on live at [hugh-obrien.com](http://hugh-obrien.com)
 

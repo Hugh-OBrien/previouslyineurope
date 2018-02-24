@@ -1,7 +1,7 @@
 ---
 layout: episode_v2
 simplecastId: 116488
-title: "Italy's Road to Election, SPD starts voting for or not for GroKo, Juncker's Federal Europe and Putin's "Cold""
+title: "Italy's Road to Election, SPD starts voting for or not for GroKo, Juncker's Federal Europe and Putin's Cold"
 sharing_token: "ede7debf"
 ---
 

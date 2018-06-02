@@ -33,14 +33,3 @@ A designer/comedian with a weird obsession with EU politics, political opinions 
 Software developer and PhD student in medical imaging. A psychology degree lives in my back pocket. Interests include misunderstandings of basic statistics in the media and complaining about what is and isn't valid news.
 
 Other things I work on live at [hugh-obrien.com](http://hugh-obrien.com)
-
-<br/>
-## **This Site**
-The idea of this site is to supplement the podcast. We were generating a lot of content and having discussions which didn't make the podcast. We also often had ideas for interesting pieces of data to visualise. This serves as a place which brings together all the {{site.title}} content into one place.
-
-- A feed combining
-  - *The Podcast* - each episode will get a page on the site
-  - *Written Content* - We'll occasionally add some additionally content in the style of blog posts, either expanding on topics we've covered on the cast or ones we weren't able to get to
-  - *Data Content*
-
-- A [Main Map](/main-map) showing some pieces of interesting data we keep updated

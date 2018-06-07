@@ -17,11 +17,12 @@
   <meta property="og:title" content="{{page.title | default: site.title | strip_html | normalize_whitespace | truncate: 160 | escape}}">
   <meta property="og:site_name" content="{{site.title | strip_html | normalize_whitespace | truncate: 160 | escape}}">
 
-  <meta property="og:image" content="https://{{site.url}}/assets/images/pie.jpg">
+  <meta property="twitter:image" content="https://{{site.url}}/assets/images/pie.jpg">
+  <meta property="og:image" content="https://{{site.url}}/assets/images/pie_fb.jpg">
 
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta property="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="alternate" type="application/rss+xml" title="Previously in Europe RSS" href="https://rss.simplecast.com/podcasts/2120/rss" />

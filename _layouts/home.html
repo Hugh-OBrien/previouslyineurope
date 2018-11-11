@@ -17,7 +17,12 @@ layout: default
       {% if post.layout == 'episode' or post.layout == 'episode_v2' %}
       <div class="simplecast-player">
         {% if post.sharing_token %}
-          {{ post.content }}
+          {% if post.description %}
+            {{ post.description }}<br />
+            <br />
+          {% else %}
+            {{ post.content }}
+          {% endif %}
           <iframe frameborder='0' height='200px' scrolling='no' seamless src='https://embed.simplecast.com/{{ post.sharing_token }}?color=3d3d3d' width='100%'></iframe>
         {% else %}
           {{ post.content }}

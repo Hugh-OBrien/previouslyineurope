@@ -40,6 +40,13 @@ JSON.parse(response.body).each do |episode|
   date = Date.parse episode['published_at']
   file_name = "./_posts/#{date}-#{title}.md"
 
+  corrected_text =
+    episode['long_description']
+    .gsub(/(?<!\[\d\]:)(?<!\[\d\]: )http.*?[\r \n [:blank:]]/) do |m|
+    site = m.split('/')[2]
+    "[#{site}](#{m})"
+  end
+
   # write file from template
   File.binwrite(file_name, <<STRING)
 ---
@@ -47,9 +54,10 @@ layout: episode_v2
 simplecastId: #{episode['id']}
 title: "#{title}"
 sharing_token: "#{episode['sharing_url'].split('/').last}"
+description: #{episode['description']}
 ---
 
-#{episode['description']}
+#{corrected_text}
 STRING
 
   counter += 1

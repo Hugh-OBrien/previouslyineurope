@@ -30,6 +30,12 @@ layout: default
           <iframe frameborder='0' height='36px' scrolling='no' seamless src='https://simplecast.com/e/{{ post.simplecastId }}?style=dark' width='100%'></iframe>
         {% endif %}
       </div>
+      {% else if post.layout == 'episode_v3' %}
+        {{ post.description }}<br />
+        <br />
+        <div class="simplecast-player">
+          <iframe frameborder='0' height='200px' frameborder="no" scrolling='no' seamless src='https://player.simplecast.com/{{ post.sharing_token }}?dark=true' width='100%'></iframe>
+        </div>
       {% else %}
         {{ post.home_text }}
       {% endif %}

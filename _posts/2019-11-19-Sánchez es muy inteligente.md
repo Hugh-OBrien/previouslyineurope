@@ -19,7 +19,7 @@ The narrative from the C's consistently since April's election was that Sanchez 
 
 Everyone on the right jumped on board during the debate. Vox claimed it was a coup...
 
-https://www.dw.com/en/spain-sanchez-casado-clash-on-catalonia-during-tv-debate/a-51113677?maca=en-rss-en-all-1573-rdf
+[dw](https://www.dw.com/en/spain-sanchez-casado-clash-on-catalonia-during-tv-debate/a-51113677?maca=en-rss-en-all-1573-rdf)
 
 Meanwhile 350k people protested in Barcelona for independence during the King's visit... so that's cool
 
@@ -27,7 +27,7 @@ Meanwhile 350k people protested in Barcelona for independence during the King's 
 
 Yes! Sanchez was being congratulated at his immense victory in April:
 
-"Spain's shattered right hands Sánchez victory" - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjuoqqhsfTlAhUCh1wKHc1rALUQFjAAegQIABAB&url=https%3A%2F%2Fwww.ft.com%2Fcontent%2F237a0924-6a2b-11e9-a9a5-351eeaef6d84&usg=AOvVaw0DzVjDidQ9uXDaFpanCiPG
+"Spain's shattered right hands Sánchez victory" - [euronews](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjuoqqhsfTlAhUCh1wKHc1rALUQFjAAegQIABAB&url=https%3A%2F%2Fwww.ft.com%2Fcontent%2F237a0924-6a2b-11e9-a9a5-351eeaef6d84&usg=AOvVaw0DzVjDidQ9uXDaFpanCiPG)
 
 "The Spanish Election Is a Triumph of Logic" - https://www.bloomberg.com/opinion/articles/2019-04-29/sanchez-s-victory-in-the-spanish-election-is-a-triumph-of-logic
 
@@ -39,13 +39,13 @@ Yes! Sanchez was being congratulated at his immense victory in April:
 
 Well... Vox is now a going concern with a substantial number of seats and has very much been normalised
 
-https://www.eurotopics.net/en/230315/why-the-spaniards-voted-for-vox#
-https://www.newstatesman.com/world/europe/2019/11/spain-s-pedro-s-nchez-paying-price-underestimating-far-right
+[eurotopics summary](https://www.eurotopics.net/en/230315/why-the-spaniards-voted-for-vox#)
+[new statesman](https://www.newstatesman.com/world/europe/2019/11/spain-s-pedro-s-nchez-paying-price-underestimating-far-right)
 
 ### Is there... good news?
 
 Yes! There's apparently going to be a government!
 
-https://jacobinmag.com/2019/11/podemos-spain-election-pablo-iglesias-pedro-sanchez/
+[jacobin](https://jacobinmag.com/2019/11/podemos-spain-election-pablo-iglesias-pedro-sanchez/)
 
 ------

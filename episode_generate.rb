@@ -39,7 +39,7 @@ JSON.parse(response.body)['collection'].each do |episode|
 
   # generate file name
   date = Date.parse episode['published_at']
-  file_name = "./_posts/#{date}-#{title}.md"
+  file_name = "./_posts/#{date}-#{title.gsub('/', '-')}.md"
 
   # make a new request for long description
   uri = URI.parse(episode['href'])

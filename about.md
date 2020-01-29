@@ -5,9 +5,36 @@ permalink: /about/
 ---
 ## **{{ site.title }} is a podcast**
 
-Europe is a sum of its parts and so it's important to understand what's going on in those parts. We cover cover the differing political landscape and state of progressive agendas across the continent.
+Europe is a sum of its parts and so it's important to understand what's going on in those parts. We cover cover the differing political landscape and state of "progressive" agendas across the continent.
+
+The scope of the podcast is to cover events and causes relevant to a European "progressive" outlook. Basically is positive change happening, if not why? Especially for 2020 what can look like or is being portrayed as positive change may not actually be so positive.
 
 We also try to cover topics which have had less or poor coverage in the English language press. A big motivation for starting the podcast was our annoyance at the skewed nature of mainstream press coverage of European events, including internal EU happenings. The ‘but how does this relate to your country’ nature of a lot of coverage makes sense; however, the perspective of the local population, how it related to progressive causes and Europe as a whole gets lost a lot of the time.
+
+## **New Listener Starting Point**
+
+We now do a yearly summary episode with up to date background information for what we plan to cover which can serve as an introduction to new listeners - [here](/2020/01/27/Subsequently-in-Europe-2020.html)
+
+
+## **Background and Summary Episodes**
+
+Bonus or regular episodes we've done to explain countries, political systems, issues or European political figures:
+
+### Country Overviews
+- [**Slovenia**](/2019/05/06/Bonus-Episode-Slovenia.html)
+
+### Issues
+- [**National Airlines** of Europe and the Airline Industry](/2019/10/16/What's-up-with-Airlines-in-Europe.html)
+- [**Healthcare** Across Europe](/2019/08/21/Bonus-Episode-European-Healthcare.html)
+- [**EU Reform**](/2019/07/17/Bonus-Episode-Reform-Europe.html)
+- [**Green New Deal** for Europe](/2019/06/30/A-New-Deal-for-a-melting-Europe.html)
+
+### Political Figures
+- [**Junker Commission** Retrospecitive](/2019/12/25/Juncker-Commission-A-Retrospective.html)
+- [Have you considered **Margrethe Vestager**](/2019/09/29/Vestager-Might-Have-Been-A-Better-Commission-President.html)
+
+---------------
+
 
 ## **Hosts**
 
